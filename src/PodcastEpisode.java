@@ -1,5 +1,5 @@
 public class PodcastEpisode extends ContentItem implements Downloadable {
-    private String hostName; // [cite: 40]
+    private String hostName;
 
     public PodcastEpisode(String title, int year, int durationMinutes, String hostName) {
         super(title, year, durationMinutes);
@@ -9,13 +9,13 @@ public class PodcastEpisode extends ContentItem implements Downloadable {
     @Override
     public double getLicenseCost(int currentYear) {
         int age = getAge(currentYear);
-        int ageFactor = (age <= 2) ? 3 : 1; // [cite: 42]
+        int ageFactor = (age <= 2) ? 3 : 1;
         return 0.03 * getDurationMinutes() + ageFactor;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " [Podcast, Host: " + hostName + "]"; // [cite: 42]
+        return super.toString() + " [Podcast, Host: " + hostName + "]";
     }
 
     @Override

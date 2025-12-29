@@ -1,5 +1,5 @@
 public class VideoLecture extends ContentItem implements Downloadable {
-    private String quality; // [cite: 36]
+    private String quality;
 
     public VideoLecture(String title, int year, int durationMinutes, String quality) {
         super(title, year, durationMinutes);
@@ -9,13 +9,13 @@ public class VideoLecture extends ContentItem implements Downloadable {
     @Override
     public double getLicenseCost(int currentYear) {
         int age = getAge(currentYear);
-        int ageFactor = (age <= 2) ? 5 : 2; // [cite: 38]
+        int ageFactor = (age <= 2) ? 5 : 2;
         return 0.05 * getDurationMinutes() + ageFactor;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " [Video, Quality: " + quality + "]"; // [cite: 38]
+        return super.toString() + " [Video, Quality: " + quality + "]";
     }
 
     @Override
