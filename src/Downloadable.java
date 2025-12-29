@@ -1,2 +1,4 @@
-public class Downloadable {
+public interface Downloadable {
+    void download();
+    int getMaxDownloadsPerDay();
 }
